@@ -1,20 +1,44 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+   <v-toolbar app=""  class="warning">
+     <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
+     <v-toolbar-title>
+        Vuetify
+     </v-toolbar-title>
+     <v-spacer></v-spacer>
+     <v-btn class="success">
+       Igreso
+     </v-btn>
+     <v-btn class="error">
+       Salir
+     </v-btn>
+   </v-toolbar>
+    <v-navigation-drawer app="" v-model="drawer" temporary="" dark>
+      <v-layout mt-4 column="" align-center=""> 
+        <v-flex>
+          <v-avatar>
+             <img src="https://randomuser.me/api/portraits/men/85.jpg">
+          </v-avatar>
+        </v-flex>
+        <v-flex class="white--text mt-3 headline">
+          Juanito Peres
+        </v-flex>
+      </v-layout>
+    </v-navigation-drawer>
+    <v-content>
+      <router-view/>
+    </v-content>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<script>
+
+export default {
+  name: 'App',
+  data () {
+    return {
+      drawer:true
+    }
+  }
 }
-</style>
+</script>
