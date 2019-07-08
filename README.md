@@ -1,4 +1,4 @@
-# vue3foro
+# vuetify desarrollo para uso de plantillas avanzadas
 
 ## Project setup
 ```
